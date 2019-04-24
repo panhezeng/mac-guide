@@ -6,21 +6,13 @@
 
 ## 让Finder显示隐藏文件
 
-`defaults write com.apple.finder AppleShowAllFiles YES; killall Finder`
+- 终端命令： `defaults write com.apple.finder AppleShowAllFiles YES; killall Finder`
 
-## 禁止生成.DS_Store
-
-```
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-#or
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-```
-
-## Remove all DS_Store files
-
-`sudo find / -name ".DS_Store" -depth -exec rm {} \;`
+- 快捷键： Command + Shift + .
 
 ## App
+
+[搜狗输入法](https://pinyin.sogou.com/mac/)
 
 [xcode](https://itunes.apple.com/cn/app/xcode/id497799835)
 
@@ -38,9 +30,11 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 [wps](http://www.wps.cn/product/wpsmac/)
 
-[airmail邮件客户端](http://xclient.info/s/airmail.html)
+[airmail](http://xclient.info/s/airmail.html)
 
 [alfred](http://xclient.info/s/alfred.html)
+
+[ShadowsocksX-NG-R](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases)
 
 [lantern](https://github.com/getlantern/download)
 
@@ -59,9 +53,15 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 ## 终端命令行相关
 
+### 在当前目录打开终端
+
+[termhere](https://hbang.ws/apps/termhere/)
+
 ### [brew](https://brew.sh/)
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+### [Homebrew 源使用帮助](https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew)
 
 ### [iterm2](https://www.iterm2.com/)
 
@@ -75,7 +75,7 @@ brew cask install iterm2 && brew install wget git python && pip install powerlin
 
 cd到install.sh文件所在目录执行`./install.sh`指令安装所有Powerline字体
 
-iTerm 2的Preferences——Profiles——Text——Regular Font/Non-ASCII Font设置成 Powerline的字体，比如Meslo LG M DZ
+iTerm 2的Preferences——Profiles——Text——Font/Non-ASCII Font设置成 Powerline的字体，比如Meslo LG M DZ
 
 iTerm 2的Preferences——Profiles——Colors——Load Presets——Solarized Dark
 
@@ -130,19 +130,20 @@ plugins=(git zsh-syntax-highlighting common-aliases web-search sudo node npm nvm
 
 `upgrade_oh_my_zsh`
 
-### 在当前目录打开终端
-
-[termhere](https://hbang.ws/apps/termhere/)
-
 ### node环境
 
-- Ubuntu系统第一次需要执行 `sudo apt-get install -y build-essential`
+- Ubuntu 系统第一次需要执行 `sudo apt-get install -y build-essential`
 
-- 安装项目依赖包 ** 如果需要把老版本的全局模块安装到新版本node，请把 nvm install node 替换为  nvm install node --reinstall-packages-from=node, 有些系统nvm命令需要手动添加到bash，所以下面命令会找不到nvm报错中断，请查看nvm安装文档 **
-    
-    ```bash
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node && nvm install node && nvm use node && npm config set registry=https://registry.npm.taobao.org && npm config set sass_binary_site=https://npm.taobao.org/mirrors/node-sass && npm config set electron_mirror=https://npm.taobao.org/mirrors/electron/ && npm config set phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs && npm config set chromedriver_cdnurl=https://npm.taobao.org/mirrors/chromedriver && npm config set selenium_cdnurl=https://npm.taobao.org/mirrors/selenium && npm install -g nrm && npm install -g node-gyp 
-    ```
+- 重置前端依赖环境，cd 到项目目录，删除前端依赖相关文件
+
+  ```bash
+  rm -rf node_modules package-lock.json yarn.lock && npm cache clean --force
+  ```
+
+- 安装项目依赖包 ** 如果需要把老版本的全局模块安装到新版本 node，请把 nvm install node 替换为 nvm install node --reinstall-packages-from=node, 有些系统 nvm 命令需要手动添加到 bash，所以下面命令会找不到 nvm 报错中断，请查看 nvm 安装文档 **
+  ```bash
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node && nvm install node && nvm use node && curl -o- https://gist.githubusercontent.com/52cik/c1de8926e20971f415dd/raw/e98cbe963748046f371a5c95161449b8b5bd321a/npm.taobao.sh | bash && npm install -g npm && npm install -g nrm
+  ```
 
 You should create NVM's working directory if it doesn't exist:
 
