@@ -14,31 +14,31 @@
 
 [搜狗输入法](https://pinyin.sogou.com/mac/)
 
-[xcode](https://itunes.apple.com/cn/app/xcode/id497799835)
+[Xcode](https://itunes.apple.com/cn/app/xcode/id497799835)
 
-[java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 [SwitchHosts](http://oldj.github.io/SwitchHosts/#cn)
 
-[webstorm](https://www.jetbrains.com/webstorm/download/#section=mac)
+[Jetbrains Toolbox App](https://www.jetbrains.com/toolbox/app/)
 
-[webstorm key](http://idea.lanyus.com/)
+[Jetbrains key](http://idea.lanyus.com/)
 
-[vscode](https://code.visualstudio.com/)
+[Vscode](https://code.visualstudio.com/)
 
 [钉钉](https://www.dingtalk.com)
 
-[wps](http://www.wps.cn/product/wpsmac/)
+[Wps](http://www.wps.cn/product/wpsmac/)
 
-[airmail](http://xclient.info/s/airmail.html)
+[Airmail](http://xclient.info/s/airmail.html)
 
-[alfred](http://xclient.info/s/alfred.html)
+[Alfred](http://xclient.info/s/alfred.html)
 
 [ShadowsocksX-NG-R](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases)
 
-[lantern](https://github.com/getlantern/download)
+[Lantern](https://github.com/getlantern/download)
 
-[chrome](https://www.google.cn/intl/zh-CN/chrome/)
+[Chrome](https://www.google.cn/intl/zh-CN/chrome/)
 
 ## 快捷键和手势
 
@@ -53,31 +53,13 @@
 
 ## 终端命令行相关
 
-### 在当前目录打开终端
-
-[termhere](https://hbang.ws/apps/termhere/)
+### [termhere 当前目录打开终端](https://hbang.ws/apps/termhere/)
 
 ### [brew](https://brew.sh/)
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 ### [Homebrew 源使用帮助](https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew)
-
-### [iterm2](https://www.iterm2.com/)
-
-```
-brew cask install iterm2 && brew install wget git python && pip install powerline-status
-```
-
-#### 安装powerline字体
-
-克隆项目 https://github.com/powerline/fonts
-
-cd到install.sh文件所在目录执行`./install.sh`指令安装所有Powerline字体
-
-iTerm 2的Preferences——Profiles——Text——Font/Non-ASCII Font设置成 Powerline的字体，比如Meslo LG M DZ
-
-iTerm 2的Preferences——Profiles——Colors——Load Presets——Solarized Dark
 
 ### zsh
 
@@ -129,6 +111,22 @@ plugins=(git zsh-syntax-highlighting common-aliases web-search sudo node npm nvm
 `source ~/.zshrc`
 
 `upgrade_oh_my_zsh`
+
+### [iterm2](https://www.iterm2.com/)
+
+```
+brew cask install iterm2 && brew install wget git python && pip install powerline-status
+```
+
+#### 安装powerline字体
+
+克隆项目 https://github.com/powerline/fonts
+
+cd到install.sh文件所在目录执行`./install.sh`指令安装所有Powerline字体
+
+iTerm 2的Preferences——Profiles——Text——Font/Non-ASCII Font设置成 Powerline的字体，比如Meslo LG M DZ
+
+iTerm 2的Preferences——Profiles——Colors——Load Presets——Solarized Dark
 
 ### node环境
 
@@ -271,7 +269,7 @@ brew install autoenv
 
 #### WebStorm 配置所在目录
 
-/Users/panhezeng/Library/Preferences/
+`~/Library/Preferences/`
 
 ### 其他配置
 
