@@ -1,44 +1,42 @@
 # MAC
 
-## 去除安装应用来源限制
-
-`sudo spctl --master-disable`
-
 ## 让Finder显示隐藏文件
 
 - 终端命令： `defaults write com.apple.finder AppleShowAllFiles YES; killall Finder`
 
-- 快捷键： Command + Shift + .
+## 安装应用 
+
+系统偏好设置 -  安全性与隐私 - 通用 
+
+[TNT打不开自动修复工具](https://xclient.info/a/2abc24fb-ddeb-5ccc-6b22-d37b4a331500.html)
 
 ## App
 
+[Keka文件解压缩](https://www.keka.io/zh-cn/)
+
 [搜狗输入法](https://pinyin.sogou.com/mac/)
 
-[xcode](https://itunes.apple.com/cn/app/xcode/id497799835)
+[TinkerTool](https://www.bresink.com/osx/TinkerTool.html)
 
-[java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[腾讯柠檬清理](https://lemon.qq.com/)
 
-[SwitchHosts](http://oldj.github.io/SwitchHosts/#cn)
+[Mounty for NTFS](https://mounty.app/)
 
-[webstorm](https://www.jetbrains.com/webstorm/download/#section=mac)
+[SwitchHosts](https://swh.app/zh/)
 
-[webstorm key](http://idea.lanyus.com/)
+[Toolbox App](https://www.jetbrains.com/zh-cn/toolbox-app/)
 
-[vscode](https://code.visualstudio.com/)
+[Vscode](https://code.visualstudio.com/)
 
 [钉钉](https://www.dingtalk.com)
 
-[wps](http://www.wps.cn/product/wpsmac/)
+[WPS](http://www.wps.cn/product/wpsmac/)
 
-[airmail](http://xclient.info/s/airmail.html)
+[Alfred](http://xclient.info/s/alfred.html)
 
-[alfred](http://xclient.info/s/alfred.html)
+[ClashX](https://github.com/yichengchen/clashX/releases)
 
-[ShadowsocksX-NG-R](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases)
-
-[lantern](https://github.com/getlantern/download)
-
-[chrome](https://www.google.cn/intl/zh-CN/chrome/)
+[Chrome](https://www.google.cn/intl/zh-CN/chrome/)
 
 ## 快捷键和手势
 
@@ -53,130 +51,103 @@
 
 ## 终端命令行相关
 
-### 在当前目录打开终端
-
-[termhere](https://hbang.ws/apps/termhere/)
-
-### [brew](https://brew.sh/)
-
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-### [Homebrew 源使用帮助](https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew)
-
 ### [iterm2](https://www.iterm2.com/)
 
-```
-brew cask install iterm2 && brew install wget git python && pip install powerline-status
-```
+iTerm2 - Make iTerm2 Default Term
 
-#### 安装powerline字体
+iTerm 2 - Preferences — Profiles — Text — Font - 16
 
-克隆项目 https://github.com/powerline/fonts
+iTerm 2 - Preferences — Profiles — Colors — Load Presets — Solarized Dark
 
-cd到install.sh文件所在目录执行`./install.sh`指令安装所有Powerline字体
+### [Homebrew 国内使用帮助](https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew)
 
-iTerm 2的Preferences——Profiles——Text——Font/Non-ASCII Font设置成 Powerline的字体，比如Meslo LG M DZ
-
-iTerm 2的Preferences——Profiles——Colors——Load Presets——Solarized Dark
-
-### zsh
-
-`brew install zsh zsh-completions`
-
-#### 修改默认shell为zsh
-
-`chsh -s /bin/zsh`
-
-#### 当前默认bash
-
-`echo $SHELL`
-
-#### 查看zsh版本
-
-`zsh --version`
-
-#### shell list
-
-`cat /etc/shells`
-
-To activate these completions, add the following to your .zshrc:
-
-`fpath=(/usr/local/share/zsh-completions $fpath)`
-
-You may also need to force rebuild `zcompdump`:
-
-`rm -f ~/.zcompdump; compinit`
-
-Additionally, if you receive "zsh compinit: insecure directories" warnings when attempting
-to load these completions, you may need to run this:
-
-`chmod go-w '/usr/local/share'`
-
-### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-
-ZSH_THEME="agnoster"
-
-https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
-
-https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
-
-`git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
-
-plugins=(git zsh-syntax-highlighting common-aliases web-search sudo node npm nvm brew osx)
-
-`source ~/.zshrc`
-
-`upgrade_oh_my_zsh`
-
-### node环境
-
-- Ubuntu 系统第一次需要执行 `sudo apt-get install -y build-essential`
-
-- 重置前端依赖环境，cd 到项目目录，删除前端依赖相关文件
-
-  ```bash
-  rm -rf node_modules package-lock.json yarn.lock && npm cache clean --force
-  ```
-
-- 安装项目依赖包 ** 如果需要把老版本的全局模块安装到新版本 node，请把 nvm install node 替换为 nvm install node --reinstall-packages-from=node, 有些系统 nvm 命令需要手动添加到 bash，所以下面命令会找不到 nvm 报错中断，请查看 nvm 安装文档 **
-  ```bash
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node && nvm install node && nvm use node && curl -o- https://gist.githubusercontent.com/52cik/c1de8926e20971f415dd/raw/e98cbe963748046f371a5c95161449b8b5bd321a/npm.taobao.sh | bash && npm install -g npm && npm install -g nrm
-  ```
-
-You should create NVM's working directory if it doesn't exist:
-
-`mkdir ~/.nvm`
-
-Add the following to ~/.zshrc or your desired shell configuration file:
-
-```
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+安装完 Oh My Zsh 再执行一次，还有先配置好 ClashX
+```shell
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export USEREMAIL="panhezeng@gmail.com"
+alias setproxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890"
+alias unsetproxy="unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;"
+' >> ~/.zshrc
+source ~/.zshrc
 ```
 
-### tldr node版 Installing
+### zsh 
+
+使用 brew 安装的 zsh 替换默认 zsh
+
+```shell
+brew install zsh
+sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+chsh -s /usr/local/bin/zsh
+```
+
+执行完以上命令，重新打开终端，执行下面命令验证，如果都变成了 /usr/local/bin/zsh 则已变更
+
+```shell
+dscl . -read /Users/$USER UserShell
+echo $SHELL
+```
+
+### [Oh My Zsh](https://ohmyz.sh/)
+
+`sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+#### [fzf](https://github.com/junegunn/fzf)
+
+#### [Oh My Zsh Plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
+
+`plugins=(git zsh-interactive-cd zsh-navigation-tools)`
+
+#### zsh-completions
+
+```shell
+brew install zsh-completions
+echo 'if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+' >> ~/.zshrc
+chmod -R go-w '/usr/local/share'
+source ~/.zshrc
+rm -f ~/.zcompdump; compinit
+```
+
+### [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+
+```shell
+brew install romkatv/powerlevel10k/powerlevel10k
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+source ~/.zshrc
+p10k configure
+```
+
+### IDE 
+vscode 
 
 ```
-npm install -g tldr
-
-#If you have trouble with the post-install script, try the following commands 如果安装出错,换下面命令，—ignore-scripts 长选项，跳过安装脚本错误 :
-
-npm install -g --ignore-scripts tldr
-
-tldr --update
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 16,
+    "terminal.external.osxExec": "iTerm.app",
+    "editor.fontSize": 16
 ```
 
 ### git
 
-1. 取消global
+设置global
+
+    `git config --global user.name $USER && git config --global user.email $USEREMAIL`
+
+取消global
 
     `git config --global --unset user.name && git config --global --unset user.email`
 
-2. 设置每个项目repo的user
+设置每个项目repo的user
 
-    `git config user.name "x" && git config user.email "x@x.com"`
+    `git config user.name $USER && git config user.email $USEREMAIL`
 
 #### 配置.ssh/config（如果没有就新建一个）
 
@@ -214,6 +185,23 @@ ssh -T x@x.com
 批量删除远程分支
 
 `git branch -r | awk -F/ '/\/feature\/fix.*/{printf"%s/%s\n",$2,$3}' | xargs git push origin --delete`
+
+### 前端开发环境
+
+[构建加速](https://help.aliyun.com/document_detail/202442.html)
+
+- Ubuntu 系统第一次需要执行 `sudo apt-get install -y build-essential`
+
+- 重置前端依赖环境，cd 到项目目录，删除前端依赖相关文件
+
+  ```bash
+  rm -rf node_modules package-lock.json yarn.lock && npm cache clean --force
+  ```
+
+- 安装项目依赖包 ** 如果需要把老版本的全局模块安装到新版本 node，请把 nvm install node 替换为 nvm install node --reinstall-packages-from=node, 有些系统 nvm 命令需要手动添加到 bash，所以下面命令会找不到 nvm 报错中断，请查看 nvm 安装文档 **
+  ```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.zshrc && export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node/" && nvm i lts/* && nvm use lts/* && npm config list && npm install -g yarn npm npm-check-updates
+  ```
 
 ### services
 
@@ -266,19 +254,3 @@ pip install virtualenv
 
 brew install autoenv
 ```
-
-### backup
-
-#### WebStorm 配置所在目录
-
-/Users/panhezeng/Library/Preferences/
-
-### 其他配置
-
-.gitconfig
-.gitignore_global
-.gitmessage
-.ShadowsocksX-NG
-.shuttle.json
-.ssh
-.zshrc
